@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-shop pro módu</title>
+    <title>Půjčovna Deštníků</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,126 +13,91 @@
             color: #333;
         }
         header {
-            background-color: #111;
-            color: #fff;
-            padding: 20px 0;
+            background-color: #0073e6;
+            color: white;
+            padding: 1rem 0;
             text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
         }
         nav {
             display: flex;
             justify-content: center;
-            background-color: #222;
-            padding: 10px 0;
+            background-color: #005bb5;
+            padding: 0.5rem 0;
         }
         nav a {
-            color: #ff0000;
+            color: white;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
+            margin: 0 1rem;
+            font-weight: bold;
         }
         nav a:hover {
             text-decoration: underline;
         }
-        .hero {
-            background-image: url('https://example.com/hero-image.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-shadow: 2px 2px 5px #000;
-        }
-        .hero h2 {
-            font-size: 3em;
-        }
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-        .product {
-            background: #fff;
-            border: 1px solid #ddd;
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
         }
-        .product img {
-            width: 100%;
-            height: auto;
+        h1, h2 {
+            color: #005bb5;
         }
-        .product h3 {
-            margin: 15px 0;
-            font-size: 1.5em;
+        .cta-button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #0073e6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
         }
-        .product p {
-            color: #777;
-            font-size: 1em;
-            margin: 0 15px 15px;
-        }
-        .product button {
-            background: #111;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            margin-bottom: 15px;
-        }
-        .product button:hover {
-            background: #444;
+        .cta-button:hover {
+            background-color: #005bb5;
         }
         footer {
-            background-color: #111;
-            color: #fff;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 20px;
+            padding: 1rem 0;
+            background-color: #f4f4f9;
+            border-top: 1px solid #ddd;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>E-shop černošské módy</h1>
+        <h1>Půjčovna Deštníků</h1>
+        <p>Praktické řešení, když vás překvapí déšť!</p>
     </header>
     <nav>
-        <a href="#">Domů</a>
-        <a href="#">O nás</a>
-        <a href="#">Produkty</a>
-        <a href="#">Kontakt</a>
+        <a href="#jak-to-funguje">Jak to funguje</a>
+        <a href="#cenik">Ceník</a>
+        <a href="#kontakt">Kontakt</a>
     </nav>
-    <div class="hero">
-        <h2>Styl inspirovaný kulturou</h2>
-    </div>
-    <section class="products">
-        <div class="product">
-            <img src="https://bzmedia.cz/fan/ne/negr/gallery/profile.default/Vj7bTRtFuT48A9GnEL1xpR0QC-GZ51mG.jpg" alt="Produkt 1">
-            <h3>Tričko s africkým vzorem</h3>
-            <p>Stylové tričko s moderním designem.</p>
-            <button>Koupit</button>
-        </div>
-        <div class="product">
-            <img src="https://pbs.twimg.com/media/BG48ENgCEAAIDl9.jpg" alt="Produkt 2">
-            <h3>Tradiční sukně</h3>
-            <p>Kombinace tradice a elegance.</p>
-            <button>Koupit</button>
-        </div>
-        <div class="product">
-            <img src="https://cdn.discordapp.com/attachments/1295372060993781922/1330883549246525440/Screenshot_20250119-231458.png?ex=678f9964&is=678e47e4&hm=763bc1d6efd7614187d3a3f62b0ca5385d2ab9640b6353632e79f112a45f9ac6&" alt="Produkt 3">
-            <h3>Šperky na míru</h3>
-            <p>Ručně vyráběné šperky z kvalitních materiálů.</p>
-            <button>Koupit</button>
-        </div>
-    </section>
+    <main class="container">
+        <section id="jak-to-funguje">
+            <h2>Jak to funguje?</h2>
+            <p>Potřebujete deštník, ale nechcete ho kupovat? U nás si můžete snadno a rychle půjčit deštník na pár hodin nebo na celý den. Stačí si vybrat deštník na jednom z našich stanovišť, naskenovat QR kód a můžete vyrazit!</p>
+        </section>
+        <section id="cenik">
+            <h2>Ceník</h2>
+            <ul>
+                <li>Půjčení na 1 hodinu: 20 Kč</li>
+                <li>Půjčení na celý den: 100 Kč</li>
+                <li>Kauce: 200 Kč (vracíme při vrácení deštníku)</li>
+            </ul>
+        </section>
+        <section id="kontakt">
+            <h2>Kontakt</h2>
+            <p>Máte dotazy? Kontaktujte nás na:</p>
+            <p>Email: <a href="mailto:info@pujcovnadestniku.cz">info@pujcovnadestniku.cz</a></p>
+            <p>Telefon: +420 123 456 789</p>
+        </section>
+        <a class="cta-button" href="#jak-to-funguje">Půjčit si deštník</a>
+    </main>
     <footer>
-        <p>&copy; 2025 E-shop černošské módy. Všechna práva vyhrazena.</p>
+        <p>&copy; 2025 Půjčovna Deštníků. Všechna práva vyhrazena.</p>
     </footer>
 </body>
 </html>
