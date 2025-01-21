@@ -6,9 +6,6 @@ body {
     padding: 0;
     background-color: #f8f9fa;
     color: #212529;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 header {
@@ -16,8 +13,6 @@ header {
     color: white;
     padding: 1rem;
     text-align: center;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 header h1 {
@@ -30,8 +25,6 @@ nav {
     justify-content: center;
     background-color: #138496;
     padding: 0.5rem 0;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 nav a {
@@ -50,8 +43,6 @@ nav a:hover {
     color: white;
     text-align: center;
     padding: 2rem 1rem;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 .hero h2 {
@@ -64,15 +55,9 @@ nav a:hover {
 }
 
 .container {
-    max-width: 500px; /* Make the container square */
-    max-height: 500px; /* Make the container square */
+    max-width: 1000px;
     margin: 2rem auto;
     padding: 1rem;
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .card {
@@ -81,7 +66,6 @@ nav a:hover {
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex: 1;
 }
 
 .card h3 {
@@ -125,7 +109,7 @@ nav a:hover {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    background-color: #17a2b8;
+    background-color: #257480;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -141,6 +125,4 @@ footer {
     padding: 1rem;
     background-color: #f8f9fa;
     border-top: 1px solid #ddd;
-    width: 100%;
-    box-sizing: border-box;
 }
