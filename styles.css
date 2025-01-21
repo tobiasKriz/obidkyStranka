@@ -1,0 +1,128 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+header {
+    background-color: #17a2b8;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #138496;
+    padding: 0.5rem 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    background-color: #17a2b8;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.hero h2 {
+    margin: 0 0 1rem;
+    font-size: 1.8rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.card {
+    background: white;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    color: #17a2b8;
+}
+
+.image-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
+
+.image-card {
+    flex: 1 1 calc(50% - 1rem);
+    margin: 0.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-card h4 {
+    margin: 0;
+    padding: 1rem;
+    font-size: 1.2rem;
+    background-color: #17a2b8;
+    color: white;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #17a2b8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: #138496;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+}
