@@ -9,19 +9,23 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #f8f9fa;
+            color: #212529;
         }
         header {
-            background-color: #0073e6;
+            background-color: #17a2b8;
             color: white;
-            padding: 1rem 0;
+            padding: 1rem;
             text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
         }
         nav {
             display: flex;
             justify-content: center;
-            background-color: #005bb5;
+            background-color: #138496;
             padding: 0.5rem 0;
         }
         nav a {
@@ -33,34 +37,80 @@
         nav a:hover {
             text-decoration: underline;
         }
+        .hero {
+            background-color: #17a2b8;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        .hero h2 {
+            margin: 0 0 1rem;
+            font-size: 1.8rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+        }
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 2rem auto;
             padding: 1rem;
+        }
+        .card {
+            background: white;
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .card h3 {
+            margin: 0 0 1rem;
+            font-size: 1.5rem;
+            color: #17a2b8;
+        }
+        .image-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+        .image-card {
+            flex: 1 1 calc(50% - 1rem);
+            margin: 0.5rem;
+            border-radius: 8px;
+            overflow: hidden;
             background: white;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
         }
-        h1, h2 {
-            color: #005bb5;
+        .image-card img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
-        .cta-button {
+        .image-card h4 {
+            margin: 0;
+            padding: 1rem;
+            font-size: 1.2rem;
+            background-color: #17a2b8;
+            color: white;
+            text-align: center;
+        }
+        .btn {
             display: inline-block;
             margin-top: 1rem;
             padding: 0.5rem 1rem;
-            background-color: #0073e6;
+            background-color: #17a2b8;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             font-size: 1rem;
         }
-        .cta-button:hover {
-            background-color: #005bb5;
+        .btn:hover {
+            background-color: #138496;
         }
         footer {
             text-align: center;
-            padding: 1rem 0;
-            background-color: #f4f4f9;
+            padding: 1rem;
+            background-color: #f8f9fa;
             border-top: 1px solid #ddd;
         }
     </style>
@@ -68,43 +118,59 @@
 <body>
     <header>
         <h1>Půjčovna Deštníků</h1>
-        <p>Praktické řešení, když vás překvapí déšť!</p>
     </header>
     <nav>
         <a href="#jak-to-funguje">Jak to funguje</a>
         <a href="#cenik">Ceník</a>
         <a href="#kontakt">Kontakt</a>
     </nav>
+    <section class="hero">
+        <h2>Praktické řešení, když vás překvapí déšť</h2>
+        <p>Snadné a rychlé půjčení deštníku přímo ve vašem městě.</p>
+        <a class="btn" href="#jak-to-funguje">Půjčit si deštník</a>
+    </section>
     <main class="container">
-        <section id="jak-to-funguje">
-            <h2>Jak to funguje?</h2>
-            <p>Potřebujete deštník, ale nechcete ho kupovat? U nás si můžete snadno a rychle půjčit deštník na pár hodin nebo na celý den.</p>
-            <p>Postup:</p>
-            <ol>
-                <li>Vyberte si deštník na naší stránce.</li>
-                <li>Zaplaťte online.</li>
-                <li>Po zaplacení obdržíte jedinečný kód.</li>
-                <li>Zadejte kód na stojanu s deštníky.</li>
-                <li>Stojan uvolní jeden ze zámků a vy si můžete deštník vyzvednout.</li>
-                <li>Pokud deštník nevrátíte, automaticky vám bude stržena odpovídající částka dle ceníku.</li>
-                <li>Možnost prodloužit půjčení jednoduše online.</li>
-            </ol>
+        <section id="jak-to-funguje" class="card">
+            <h3>Jak to funguje?</h3>
+            <p>
+                1. Vyberte si deštník v našem systému a zaplaťte online.<br>
+                2. Po zaplacení obdržíte unikátní kód.<br>
+                3. Na stojanu s deštníky zadejte tento kód.<br>
+                4. Stojan uvolní zámek a vy si můžete deštník vyzvednout.<br>
+                5. Pokud deštník nevrátíte, automaticky vám bude účtována odpovídající částka.
+            </p>
         </section>
-        <section id="cenik">
-            <h2>Ceník</h2>
+        <section class="image-section">
+            <div class="image-card">
+                <img src="image1.jpg" alt="Lidé půjčující si deštník">
+                <h4>Snadné použití</h4>
+            </div>
+            <div class="image-card">
+                <img src="image2.jpg" alt="Stojan na deštníky">
+                <h4>Moderní stojany</h4>
+            </div>
+            <div class="image-card">
+                <img src="image3.jpg" alt="Uživatelé s deštníkem">
+                <h4>Vždy k dispozici</h4>
+            </div>
+            <div class="image-card">
+                <img src="image4.jpg" alt="Deštníky v dešti">
+                <h4>Spolehlivá ochrana</h4>
+            </div>
+        </section>
+        <section id="cenik" class="card">
+            <h3>Ceník</h3>
             <ul>
                 <li>Půjčení na 1 hodinu: 20 Kč</li>
                 <li>Půjčení na celý den: 100 Kč</li>
                 <li>Pokud deštník nevrátíte, bude účtována náhrada: 500 Kč</li>
             </ul>
         </section>
-        <section id="kontakt">
-            <h2>Kontakt</h2>
-            <p>Máte dotazy? Kontaktujte nás na:</p>
+        <section id="kontakt" class="card">
+            <h3>Kontakt</h3>
             <p>Email: <a href="mailto:info@pujcovnadestniku.cz">info@pujcovnadestniku.cz</a></p>
             <p>Telefon: +420 123 456 789</p>
         </section>
-        <a class="cta-button" href="#jak-to-funguje">Půjčit si deštník</a>
     </main>
     <footer>
         <p>&copy; 2025 Půjčovna Deštníků. Všechna práva vyhrazena.</p>
