@@ -1,1 +1,2 @@
 # obidkyStranka
+jsem sigma
