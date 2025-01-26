@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Půjčení Deštníku</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <script>
+        document.getElementById('header-container').innerHTML = fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-container').innerHTML = data);
+    </script>
+
+    <main class="container">
+        <h2>Půjčení Deštníku</h2>
+        <p>Vyplňte následující formulář a získejte svůj unikátní kód pro otevření stojanu.</p>
+        <form id="umbrella-form">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required placeholder="Váš e-mail">
+            
+            <label for="duration">Doba půjčení:</label>
+            <select id="duration" name="duration" required>
+                <option value="1h">1 hodina - 20 Kč</option>
+                <option value="1d">1 den - 100 Kč</option>
+            </select>
+            
+            <button type="button" id="generate-code-btn">Zaplatit a získat kód</button>
+        </form>
+        <p id="generated-code" style="margin-top: 20px; font-weight: bold;"></p>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script>
+        document.getElementById('footer-container').innerHTML = fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data);
+
+        // JavaScript for generating the code
+        document.getElementById('generate-code-btn').addEventListener('click', () => {
+            const email = document.getElementById('email').value;
+            const duration = document.getElementById('duration').value;
+
+            if (!email || !duration) {
+                alert('Prosím, vyplňte všechny údaje.');
+                return;
+            }
+
+            const code = generateCode('A'); // You can pass the location as needed
+            document.getElementById('generated-code').textContent = `Váš unikátní kód: ${code}`;
+        });
+
+        function generateCode(locationHex) {
+            // Get the current Unix timestamp in milliseconds
+            const unixTime = Date.now();
+            // Convert to string and strip the first three and last digits
+            const stripped = unixTime.toString().slice(3, -1);
+            // Convert the resulting string to hexadecimal
+            const hex = parseInt(stripped, 10).toString(16);
+            // Append the location hex digit
+            return hex + locationHex;
+        }
+    </script>
+</body>
+</html>
