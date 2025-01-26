@@ -18,7 +18,7 @@
     <main class="container">
         <h2>Půjčení Deštníku</h2>
         <p>Vyplňte následující formulář a získejte svůj unikátní kód pro otevření stojanu.</p>
-        <form action="submit-pujceni.html" method="post">
+        <form id="umbrella-form">
             <label for="email">E-mail:</label>
             <input type="email" id="email" name="email" required placeholder="Váš e-mail">
             
@@ -28,8 +28,9 @@
                 <option value="1d">1 den - 100 Kč</option>
             </select>
             
-            <button type="submit">Zaplatit a získat kód</button>
+            <button type="button" id="generate-code-btn">Zaplatit a získat kód</button>
         </form>
+        <p id="generated-code" style="margin-top: 20px; font-weight: bold;"></p>
     </main>
 
     <div id="footer-container"></div>
@@ -38,6 +39,31 @@
         document.getElementById('footer-container').innerHTML = fetch('footer.html')
             .then(response => response.text())
             .then(data => document.getElementById('footer-container').innerHTML = data);
+
+        // JavaScript for generating the code
+        document.getElementById('generate-code-btn').addEventListener('click', () => {
+            const email = document.getElementById('email').value;
+            const duration = document.getElementById('duration').value;
+
+            if (!email || !duration) {
+                alert('Prosím, vyplňte všechny údaje.');
+                return;
+            }
+
+            const code = generateCode('A'); // You can pass the location as needed
+            document.getElementById('generated-code').textContent = `Váš unikátní kód: ${code}`;
+        });
+
+        function generateCode(locationHex) {
+            // Get the current Unix timestamp in milliseconds
+            const unixTime = Date.now();
+            // Convert to string and strip the first three and last digits
+            const stripped = unixTime.toString().slice(3, -1);
+            // Convert the resulting string to hexadecimal
+            const hex = parseInt(stripped, 10).toString(16);
+            // Append the location hex digit
+            return hex + locationHex;
+        }
     </script>
 </body>
 </html>
