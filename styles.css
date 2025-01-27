@@ -105,21 +105,6 @@ nav a:hover {
     text-align: center;
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #257480;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.btn:hover {
-    background-color: #138496;
-}
-
 footer {
     text-align: center;
     padding: 1rem;
