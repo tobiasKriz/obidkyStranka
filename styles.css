@@ -113,7 +113,7 @@ footer {
 }
 button {
     display: inline-block;
-    background-color: #007BFF; /* Blue background */
+    background-color:  #17a2b8; /* Blue background */
     color: #fff; /* White text */
     border: none; /* Remove border */
     border-radius: 8px; /* Rounded corners */
@@ -125,9 +125,9 @@ button {
     }
 
 button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #138496; /* Darker blue on hover */
     }
 
 button:active {
-    background-color: #004085; /* Even darker blue on click */
+    background-color: #138496; /* Even darker blue on click */
     }
