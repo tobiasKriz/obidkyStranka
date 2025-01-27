@@ -23,7 +23,7 @@ header h1 {
 nav {
     display: flex;
     justify-content: center;
-    background-color: rgb(15, 101, 114);
+    background-color: #315d86;
     padding: 0.5rem 0;
 }
 
@@ -125,9 +125,9 @@ button {
     }
 
 button:hover {
-    background-color: rgb(15, 101, 114); /* Darker blue on hover */
+    background-color: #315d86; /* Darker blue on hover */
     }
 
 button:active {
-    background-color: rgb(15, 101, 114); /* Even darker blue on click */
+    background-color: #315d86; /* Even darker blue on click */
     }
