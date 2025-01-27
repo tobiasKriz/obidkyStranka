@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background-color: #17a2b8;
+    background-color: #4e95d9;
     color: white;
     padding: 1rem;
     text-align: center;
@@ -23,7 +23,7 @@ header h1 {
 nav {
     display: flex;
     justify-content: center;
-    background-color: #138496;
+    background-color: rgb(15, 101, 114);
     padding: 0.5rem 0;
 }
 
@@ -39,7 +39,7 @@ nav a:hover {
 }
 
 .hero {
-    background-color: #17a2b8;
+    background-color: #4e95d9;
     color: white;
     text-align: center;
     padding: 2rem 1rem;
@@ -71,7 +71,7 @@ nav a:hover {
 .card h3 {
     margin: 0 0 1rem;
     font-size: 1.5rem;
-    color: #17a2b8;
+    color: #4e95d9;
 }
 
 .image-section {
@@ -100,7 +100,7 @@ nav a:hover {
     margin: 0;
     padding: 1rem;
     font-size: 1.2rem;
-    background-color: #17a2b8;
+    background-color: #4e95d9;
     color: white;
     text-align: center;
 }
@@ -113,7 +113,7 @@ footer {
 }
 button {
     display: inline-block;
-    background-color:  #17a2b8; /* Blue background */
+    background-color:  #4e95d9; /* Blue background */
     color: #fff; /* White text */
     border: none; /* Remove border */
     border-radius: 8px; /* Rounded corners */
@@ -125,9 +125,9 @@ button {
     }
 
 button:hover {
-    background-color: #138496; /* Darker blue on hover */
+    background-color: rgb(15, 101, 114); /* Darker blue on hover */
     }
 
 button:active {
-    background-color: #138496; /* Even darker blue on click */
+    background-color: rgb(15, 101, 114); /* Even darker blue on click */
     }
