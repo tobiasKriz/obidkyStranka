@@ -6,7 +6,6 @@
     <title>Půjčení Deštníku</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="logo.png" type="image/x-icon">
-
 </head>
 <body>
     <div id="header-container"></div>
@@ -18,6 +17,7 @@
     </script>
 
     <main class="container">
+        <h2 id="credit-display">Kredit: 100 Kč</h2>
         <h2>Půjčení Deštníku</h2>
         <p>Vyplňte následující formulář a získejte svůj unikátní kód pro otevření stojanu.</p>
         <form id="umbrella-form">
@@ -26,8 +26,8 @@
             
             <label for="duration">Doba půjčení:</label>
             <select id="duration" name="duration" required>
-                <option value="1h">1 hodina - 35 Kč</option>
-                <option value="1d">1 den - 120 Kč</option>
+                <option value="35">1 hodina - 35 Kč</option>
+                <option value="120">1 den - 120 Kč</option>
             </select>
             
             <button type="button" id="generate-code-btn">Zaplatit a získat kód</button>
@@ -38,11 +38,17 @@
     <div id="footer-container"></div>
 
     <script>
+        let money = 100;
         document.getElementById('footer-container').innerHTML = fetch('footer.html')
             .then(response => response.text())
             .then(data => document.getElementById('footer-container').innerHTML = data);
 
-        // JavaScript for generating the code
+        // Function to update the credit display
+        function updateCreditDisplay() {
+            document.getElementById('credit-display').textContent = `Kredit: ${money} Kč`;
+        }
+
+        // JavaScript for generating the code and deducting money
         document.getElementById('generate-code-btn').addEventListener('click', () => {
             const email = document.getElementById('email').value;
             const duration = document.getElementById('duration').value;
@@ -52,21 +58,34 @@
                 return;
             }
 
-            const code = generateRandomCode(); // You can pass the location as needed
+            const cost = parseInt(duration);
+            if (money < cost) {
+                alert('Nemáte dostatek kreditu pro tuto operaci.');
+                return;
+            }
+
+            money -= cost;
+            updateCreditDisplay();
+
+            const code = generateRandomCode();
             document.getElementById('generated-code').textContent = `Váš unikátní kód: ${code}`;
         });
 
-function generateRandomCode() {
-    let code = '';
-    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    
-    for (let i = 0; i < 4; i++) {
-        const randomIndex = Math.floor(Math.random() * alphabet.length);
-        code += alphabet[randomIndex];
-    }
-    
-    return code;
-}
+        // Function to generate a random code
+        function generateRandomCode() {
+            let code = '';
+            const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            
+            for (let i = 0; i < 4; i++) {
+                const randomIndex = Math.floor(Math.random() * alphabet.length);
+                code += alphabet[randomIndex];
+            }
+            
+            return code;
+        }
+
+        // Initial credit display update
+        updateCreditDisplay();
     </script>
 </body>
 </html>
