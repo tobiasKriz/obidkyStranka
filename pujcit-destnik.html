@@ -52,20 +52,21 @@
                 return;
             }
 
-            const code = generateCode('A'); // You can pass the location as needed
+            const code = generateRandomCode(); // You can pass the location as needed
             document.getElementById('generated-code').textContent = `Váš unikátní kód: ${code}`;
         });
 
-        function generateCode(locationHex) {
-            // Get the current Unix timestamp in milliseconds
-            const unixTime = Date.now();
-            // Convert to string and strip the first three and last digits
-            const stripped = unixTime.toString().slice(3, -1);
-            // Convert the resulting string to hexadecimal
-            const hex = parseInt(stripped, 10).toString(16);
-            // Append the location hex digit
-            return hex + locationHex;
-        }
+function generateRandomCode() {
+    let code = '';
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    
+    for (let i = 0; i < 4; i++) {
+        const randomIndex = Math.floor(Math.random() * alphabet.length);
+        code += alphabet[randomIndex];
+    }
+    
+    return code;
+}
     </script>
 </body>
 </html>
