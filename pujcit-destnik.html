@@ -17,7 +17,7 @@
     </script>
 
     <main class="container">
-        <h2 id="credit-display">Kredit: 100 Kč</h2>
+        <h2 id="credit-display">Kredit: 1000 Kč</h2>
         <h2>Půjčení Deštníku</h2>
         <p>Vyplňte následující formulář a získejte svůj unikátní kód pro otevření stojanu.</p>
         <form id="umbrella-form">
@@ -38,7 +38,7 @@
     <div id="footer-container"></div>
 
     <script>
-        let money = 100;
+        let money = 1000;
         document.getElementById('footer-container').innerHTML = fetch('footer.html')
             .then(response => response.text())
             .then(data => document.getElementById('footer-container').innerHTML = data);
